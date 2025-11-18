@@ -14,7 +14,8 @@ How to install:
 
 ## Usage
 
-<img src="basic.png" alt="Basic" width="600">
-
-<img src="advance.png" alt="Advanced" width="600">
+<div style="display: flex; gap: 20px;">
+  <img src="basic.png" alt="Basic" width="300">
+  <img src="advance.png" alt="Advanced" width="300">
+</div>
 
