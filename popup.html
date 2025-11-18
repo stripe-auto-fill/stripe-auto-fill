@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stripe Auto Fill</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo-container">
+        <div>
+          <h2 id="extensionName">Stripe Auto Fill</h2>
+          <div class="version" id="versionDisplay">v5.0</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="tab-navigation">
+      <button class="tab-btn active" data-tab="generate">Generate Now</button>
+      <button class="tab-btn" data-tab="advanced">Advanced</button>
+    </div>
+    
+    <div class="content tab-content active" id="generateTab">
+      <div class="input-group">
+        <div style="display: flex; gap: 10px; align-items: flex-start;">
+          <div style="flex: 1;">
+            <label for="bin">Enter BIN:</label>
+            <input type="text" id="bin" placeholder="552461" maxlength="16" style="width: 100%;">
+          </div>
+          <div style="width: 80px;">
+            <label for="cardQuantity">Quantity:</label>
+            <input type="number" id="cardQuantity" placeholder="10" min="1" max="100" value="10" style="width: 100%;">
+          </div>
+        </div>
+      </div>
+      
+      <div class="input-group">
+        <label for="generateMethod">Generation Method:</label>
+        <select id="generateMethod" class="method-select">
+          <option value="luhn">Luhn Algorithm (Offline)</option>
+          <option value="api">API Generator (Online)</option>
+        </select>
+      </div>
+      
+      <button id="generateCardsBtn" class="btn btn-primary">
+        Generate Cards
+      </button>
+      
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <button id="autoFillBtn" class="btn btn-primary">
+          Auto Fill Next
+        </button>
+        <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+          <input type="checkbox" id="fillAddressCheckbox" checked>
+          <span>Fill Address</span>
+        </label>
+      </div>
+      
+      <button id="clearBtn" class="btn btn-secondary">
+        Reset
+      </button>
+
+      <div class="saved-bin" id="cardsInfo" style="display: none;">
+        <p><strong>Cards loaded:</strong> <span id="cardsCount">0</span> | <strong>Next:</strong> <span id="nextIndex">1</span></p>
+      </div>
+      
+      <div class="status" id="status">
+        <p>Enter BIN and generate cards</p>
+      </div>
+    </div>
+    
+    <div class="content tab-content" id="advancedTab">
+      <div class="input-group">
+        <label for="advancedFormat">Enter Card Format (one per line):</label>
+        <textarea id="advancedFormat" rows="8" placeholder="5524610000000000|12|2025|123&#10;5524610000000001|01|2026|456&#10;5524610000000002|06|2027|789"></textarea>
+        <small>Format: cc|month|year|cvv (one card per line)</small>
+      </div>
+      
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <button id="autoFillNextBtn" class="btn btn-primary">
+          Auto Fill Next
+        </button>
+        <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+          <input type="checkbox" id="advancedFillAddressCheckbox" checked>
+          <span>Fill Address</span>
+        </label>
+      </div>
+      
+      <button id="clearAdvancedBtn" class="btn btn-secondary">
+        Reset
+      </button>
+      
+      <div class="saved-bin" id="advancedCardsInfo" style="display: none;">
+        <p><strong>Cards loaded:</strong> <span id="advancedCardsCount">0</span> | <strong>Next:</strong> <span id="advancedNextIndex">1</span></p>
+      </div>
+      
+      <div class="status" id="advancedStatus">
+        <p>Paste card format and click "Auto Fill Next" to fill one at a time</p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="constants.js"></script>
+  <script src="shared.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

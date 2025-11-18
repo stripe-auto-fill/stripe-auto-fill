@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Stripe Auto Fill",
+  "version": "5.0.0",
+  "description": "Automatically fill Stripe checkout with generated cards.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "scripting",
+    "activeTab",
+    "sidePanel",
+    "cookies"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://checkout.stripe.com/*"],
+      "js": ["constants.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Stripe Auto Fill"
+  },
+  "side_panel": {
+    "default_path": "popup.html"
+  }
+}
+
