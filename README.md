@@ -12,3 +12,9 @@ How to install:
 - Click "Load unpacked" (or "Load extension" in some browsers) and select the extension directory
 - The extension will be installed and ready to use
 
+## Usage
+
+![Basic](basic.png)
+
+![Advanced](advance.png)
+
