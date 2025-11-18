@@ -15,7 +15,7 @@ How to install:
 ## Usage
 
 <div style="display: flex; gap: 20px;">
-  <img src="basic.png" alt="Basic" width="300">
-  <img src="advance.png" alt="Advanced" width="300">
+  <img src="basic.png" alt="Basic" width="200">
+  <img src="advance.png" alt="Advanced" width="200">
 </div>
 
