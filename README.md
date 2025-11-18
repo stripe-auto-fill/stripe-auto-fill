@@ -14,7 +14,7 @@ How to install:
 
 ## Usage
 
-![Basic](basic.png)
+<img src="basic.png" alt="Basic" width="600">
 
-![Advanced](advance.png)
+<img src="advance.png" alt="Advanced" width="600">
 
