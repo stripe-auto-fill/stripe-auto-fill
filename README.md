@@ -3,7 +3,7 @@
 Automatically fill Stripe checkout with generated cards.
 
 How to install:
-- Download or clone this repository to your local machine
+- [Download](https://github.com/stripe-auto-fill/stripe-auto-fill/archive/refs/heads/main.zip) and extract or clone this repository to your local machine
 - Open your browser and navigate to the extensions page:
   - Chrome/Chromium: `chrome://extensions/`
   - Edge: `edge://extensions/`
